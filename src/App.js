@@ -26,20 +26,24 @@ class App extends Component {
 
     let { isLoaded, remoteQuote } = this.state;
 
-    return (
-      <div className="App">
-        <div id="quote-box">
-          <q id="text">
-            The random quote will display here.
-          </q>
-          <cite id="author">
-            The name of an author of this quote will display here.
-          </cite>
-          <button id="new-quote">New quote</button>
-          <a id="tweet-quote" href="twitter.com/intent/tweet">Tweet quote</a>
+    if(!isLoaded){
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="App">
+          <div id="quote-box">
+            <q id="text">
+              The random quote will display here.
+            </q>
+            <cite id="author">
+              The name of an author of this quote will display here.
+            </cite>
+            <button id="new-quote">New quote</button>
+            <a id="tweet-quote" href="twitter.com/intent/tweet">Tweet quote</a>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
