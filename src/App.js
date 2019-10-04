@@ -11,6 +11,17 @@ class App extends Component {
     }
   }
 
+    componenetDidMount() {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(json => {
+          this.setState({
+            isLoaded: true,
+              randomQuote: json
+          })
+        });
+    }
+
   render(){
     return (
       <div className="App">
