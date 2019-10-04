@@ -6,25 +6,34 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomQuote: '',
+      randomQuote: [],
       isLoaded: false
     }
   }
 
-    componentDidMount() {
-      fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(json => {
-          this.setState({
-            isLoaded: true,
-              randomQuote: json
-          })
-        });
-    }
+  componentDidMount() {
+    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=1", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "andruxnet-random-famous-quotes.p.rapidapi.com",
+        "x-rapidapi-key": "8ec386ec60msh579026526fbc14cp13550ejsn503782a91fff"
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      this.setState({
+        isLoaded: true,
+        randomQuote: response
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
   render(){
 
-    let { isLoaded, remoteQuote } = this.state;
+    let { isLoaded, randomQuote } = this.state;
 
     if(!isLoaded){
       return <div>Loading...</div>;
@@ -33,10 +42,10 @@ class App extends Component {
         <div className="App">
           <div id="quote-box">
             <q id="text">
-              The random quote will display here.
+              {randomQuote[0].quote}
             </q>
             <cite id="author">
-              The name of an author of this quote will display here.
+              {randomQuote[0].author}
             </cite>
             <button id="new-quote">New quote</button>
             <a id="tweet-quote" href="twitter.com/intent/tweet">Tweet quote</a>
