@@ -10,8 +10,6 @@ After clicking a button 'New quote', on page will be displayed randomly a new qu
 
 - HTML<br/>
 - CSS<br/>
-- SASS<br/>
 - JavaScript<br/>
 - React<br/>
-- Redux<br/>
-- API from this site: https://theysaidso.com/api/
+- API from this site: [rapidapi.com/andruxnet/api/random-famous-quotes/endpoints](rapidapi.com/andruxnet/api/random-famous-quotes/endpoints)
