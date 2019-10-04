@@ -23,6 +23,9 @@ class App extends Component {
     }
 
   render(){
+
+    let { isLoaded, remoteQuote } = this.state;
+
     return (
       <div className="App">
         <div id="quote-box">
