@@ -6,7 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomQuote: ''
+      randomQuote: '',
+      isLoaded: false
     }
   }
 
