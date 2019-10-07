@@ -31,6 +31,11 @@ class App extends Component {
     });
   }
 
+  changeQuote(){
+    // Refresh page and take a new quote from API
+    window.location.reload(true);
+  }
+
   render(){
 
     let { isLoaded, randomQuote } = this.state;
@@ -47,7 +52,7 @@ class App extends Component {
             <cite id="author">
               {randomQuote[0].author}
             </cite>
-            <button id="new-quote">New quote</button>
+            <button id="new-quote" onClick={this.changeQuote.bind(this)}>New quote</button>
             <a id="tweet-quote" href="twitter.com/intent/tweet">Tweet quote</a>
           </div>
         </div>
