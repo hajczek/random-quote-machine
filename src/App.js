@@ -52,8 +52,20 @@ class App extends Component {
             <cite id="author">
               {randomQuote[0].author}
             </cite>
-            <button id="new-quote" onClick={this.changeQuote.bind(this)}>New quote</button>
-            <a id="tweet-quote" href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + randomQuote[0].quote + ' ' + randomQuote[0].author}>Tweet quote</a>
+            <div class="buttons">
+            <a 
+              id="tweet-quote" 
+              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + randomQuote[0].quote + ' ' + randomQuote[0].author}
+            >
+              Twitt quote
+            </a>
+              <button 
+                id="new-quote" 
+                onClick={this.changeQuote.bind(this)}
+              >
+                New quote
+              </button>
+            </div>
           </div>
         </div>
       );

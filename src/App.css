@@ -1,22 +1,92 @@
+
+/* CSS Styles */
+
+/* Fonts import */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+/* Reset */
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav,
+main,
+section,
+footer,
+q,
+cite {
+  display: block;
+}
+
+/* Main sets */
+
+body {
+  color: #eee;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+}
+
 .App {
+  background-color: #eee;
+  height: 100vh;
+}
+
+/* Styles for box with quote */
+#quote-box {
+  background-color: #666;
+  color: rgb(250, 255, 255);
+  height: 220px;
+  left: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+}
+
+/* Styles for quote */
+q {
+  font-size: 1.5em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Styles for author */
+cite {
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+cite:before {
+  content: '~';
 }
 
-.App-link {
-  color: #09d3ac;
+/* Styles for box with buttons */
+.buttons {
+  bottom: 30px;
+  position: absolute;
+  right: 30px;
+}
+
+button,
+a {
+  background-color: #12917c;
+  border: none;
+  color: #eee;
+  font-size: 1.2em;
+  margin-right: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+button:hover,
+a:hover {
+  background-color: #087765;
+  color: #fff;
+  cursor: pointer;
 }
