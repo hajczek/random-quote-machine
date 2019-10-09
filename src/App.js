@@ -40,7 +40,13 @@ class App extends Component {
     let { isLoaded, quotes} = this.state;
 
     if(!isLoaded){
-      return <div>Loading...</div>;
+      return (
+        <div className="App">
+          <div id="quote-box">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      )
     } else {
       return (
         <div className="App">
