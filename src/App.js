@@ -59,7 +59,7 @@ class App extends Component {
               id="tweet-quote" 
               href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + quotes[randomQuote].quote + ' ' + quotes[randomQuote].author}
             >
-              Twitt quote
+              Tweet quote
             </a>
               <button 
                 id="new-quote" 
