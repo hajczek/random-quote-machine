@@ -7,13 +7,12 @@ class App extends Component {
     super(props);
     this.state = {
       quotes: [],
-      randomQuote: 0,
       isLoaded: false
     }
   }
 
   componentDidMount() {
-    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=10", {
+    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=1", {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "andruxnet-random-famous-quotes.p.rapidapi.com",
@@ -33,14 +32,12 @@ class App extends Component {
   }
 
   changeQuote(){
-    this.setState({
-      randomQuote: Math.floor((Math.random() * 10) + 1)
-    });
+    window.location.reload(true);
   }
 
   render(){
 
-    let { isLoaded, quotes, randomQuote } = this.state;
+    let { isLoaded, quotes} = this.state;
 
     if(!isLoaded){
       return <div>Loading...</div>;
@@ -49,15 +46,15 @@ class App extends Component {
         <div className="App">
           <div id="quote-box">
             <q id="text">
-              {quotes[randomQuote].quote}
+              {quotes[0].quote}
             </q>
             <cite id="author">
-              {quotes[randomQuote].author}
+              {quotes[0].author}
             </cite>
             <div className="buttons">
             <a 
               id="tweet-quote" 
-              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + quotes[randomQuote].quote + ' ' + quotes[randomQuote].author}
+              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + quotes[0].quote + ' ' + quotes[0].author}
             >
               Tweet quote
             </a>
