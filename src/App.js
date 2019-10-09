@@ -6,13 +6,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomQuote: [],
+      quotes: [],
+      randomQuote: 0,
       isLoaded: false
     }
   }
 
   componentDidMount() {
-    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=1", {
+    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=10", {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "andruxnet-random-famous-quotes.p.rapidapi.com",
@@ -23,7 +24,7 @@ class App extends Component {
     .then(response => {
       this.setState({
         isLoaded: true,
-        randomQuote: response
+        quotes: response
       });
     })
     .catch(err => {
@@ -32,13 +33,14 @@ class App extends Component {
   }
 
   changeQuote(){
-    // Refresh page and take a new quote from API
-    window.location.reload(true);
+    this.setState({
+      randomQuote: Math.floor((Math.random() * 10) + 1)
+    });
   }
 
   render(){
 
-    let { isLoaded, randomQuote } = this.state;
+    let { isLoaded, quotes, randomQuote } = this.state;
 
     if(!isLoaded){
       return <div>Loading...</div>;
@@ -47,15 +49,15 @@ class App extends Component {
         <div className="App">
           <div id="quote-box">
             <q id="text">
-              {randomQuote[0].quote}
+              {quotes[randomQuote].quote}
             </q>
             <cite id="author">
-              {randomQuote[0].author}
+              {quotes[randomQuote].author}
             </cite>
-            <div class="buttons">
+            <div className="buttons">
             <a 
               id="tweet-quote" 
-              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + randomQuote[0].quote + ' ' + randomQuote[0].author}
+              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + quotes[randomQuote].quote + ' ' + quotes[randomQuote].author}
             >
               Twitt quote
             </a>
