@@ -100,9 +100,18 @@ cite:before {
 
 /* Styles for box with buttons */
 .buttons {
-  bottom: 30px;
-  position: absolute;
-  right: 30px;
+  float: right;
+  position: relative;
+  top: 20px;
+}
+
+a {
+  margin-right: 20px;
+  padding: 10px;
+}
+
+button {
+  padding: 12px 10px;
 }
 
 button,
@@ -110,10 +119,11 @@ a {
   background-color: #12917c;
   border: none;
   color: #eee;
+  display: inline-block;
   font-size: 1.2em;
-  margin-right: 20px;
-  padding: 10px;
+  text-align: center;
   text-decoration: none;
+  width: 140px;
 }
 
 button:hover,
