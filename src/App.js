@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Quote from './components/Quote';
+import TweetQuote from './components/TweetQuote';
 import './App.css';
 
 class App extends Component {
@@ -54,12 +55,7 @@ class App extends Component {
           <div id="quote-box">
             <Quote quotes={this.state.quotes}/>
             <div className="buttons">
-            <a 
-              id="tweet-quote" 
-              href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + quotes[0].quote + ' ' + quotes[0].author}
-            >
-              Tweet quote
-            </a>
+              <TweetQuote quotes={this.state.quotes} />
               <button 
                 id="new-quote" 
                 onClick={this.changeQuote.bind(this)}
