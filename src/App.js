@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Quote from './components/Quote';
 import './App.css';
 
 class App extends Component {
@@ -51,12 +52,7 @@ class App extends Component {
       return (
         <div className="App">
           <div id="quote-box">
-            <q id="text">
-              {quotes[0].quote}
-            </q>
-            <cite id="author">
-              {quotes[0].author}
-            </cite>
+            <Quote quotes={this.state.quotes}/>
             <div className="buttons">
             <a 
               id="tweet-quote" 
