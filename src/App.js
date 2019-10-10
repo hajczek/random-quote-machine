@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Quote from './components/Quote';
-import TweetQuote from './components/TweetQuote';
-import NewQuote from './components/NewQuote';
+import Buttons from './components/Buttons';
 import './App.css';
 
 class App extends Component {
@@ -54,10 +53,11 @@ class App extends Component {
         <div className="App">
           <div id="quote-box">
             <Quote quotes={this.state.quotes}/>
-            <div className="buttons">
-              <TweetQuote quotes={this.state.quotes} />
-              <NewQuote changeQuote={this.changeQuote} />
-            </div>
+            <Buttons
+              quotes={this.state.quotes}
+              changeQuote={this.changeQuote}
+            >
+            </Buttons>
           </div>
         </div>
       );
