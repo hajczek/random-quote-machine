@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Quote from './components/Quote';
 import TweetQuote from './components/TweetQuote';
+import NewQuote from './components/NewQuote';
 import './App.css';
 
 class App extends Component {
@@ -38,7 +39,6 @@ class App extends Component {
   }
 
   render(){
-
     let { isLoaded, quotes} = this.state;
 
     if(!isLoaded){
@@ -56,12 +56,7 @@ class App extends Component {
             <Quote quotes={this.state.quotes}/>
             <div className="buttons">
               <TweetQuote quotes={this.state.quotes} />
-              <button 
-                id="new-quote" 
-                onClick={this.changeQuote.bind(this)}
-              >
-                New quote
-              </button>
+              <NewQuote changeQuote={this.changeQuote} />
             </div>
           </div>
         </div>
