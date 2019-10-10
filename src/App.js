@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Quote from './components/Quote';
 import Buttons from './components/Buttons';
+import Spinner from './components/Spinner';
 import './App.css';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -41,13 +41,7 @@ class App extends Component {
     let { isLoaded, quotes} = this.state;
 
     if(!isLoaded){
-      return (
-        <div className="App">
-          <div id="quote-box">
-            <div class="spinner"></div>
-          </div>
-        </div>
-      )
+      return <Spinner />
     } else {
       return (
         <div className="App">
