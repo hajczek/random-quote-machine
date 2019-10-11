@@ -29,7 +29,7 @@ class App extends Component {
       });
     })
     .catch(err => {
-      new Error('Connection with API is break.');
+      alert('Some error occur in application.')
     });
   }
 
