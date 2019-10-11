@@ -29,7 +29,7 @@ class App extends Component {
       });
     })
     .catch(err => {
-      console.log(err);
+      new Error('Connection with API is break.');
     });
   }
 
@@ -46,9 +46,9 @@ class App extends Component {
       return (
         <div className="App">
           <div id="quote-box">
-            <Quote quotes={this.state.quotes}/>
+            <Quote quotes={quotes}/>
             <Buttons
-              quotes={this.state.quotes}
+              quotes={quotes}
               changeQuote={this.changeQuote}
             >
             </Buttons>
