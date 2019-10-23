@@ -2,7 +2,7 @@
   "name": "random-quote-machine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://imię.github.io/nazwa",
+  "homepage": "https://hajczek.github.io/random-quote-machine/",
   "dependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
