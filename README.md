@@ -15,6 +15,10 @@ After clicking a button 'Tweet quote', the displayed quote will be tweet on Twit
 - React<br/>
 - API from this site: [rapidapi.com/andruxnet/api/random-famous-quotes/endpoints](https://rapidapi.com/andruxnet/api/random-famous-quotes/endpoints)
 
+### LINK
+
+[Link to this project](https://hajczek.github.io/random-quote-machine/)
+
 ### LICENSE
 
 The MIT License - See [license.md](https://github.com/hajczek/random-quote-machine/blob/master/license/License.md)
