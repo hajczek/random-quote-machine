@@ -7,7 +7,7 @@ This application displays on the screen a quote of a famous person, which is tak
 After clicking a button 'New quote' on a page will be displayed randomly, a new quote of famouse person from API.<br>
 After clicking a button 'Tweet quote', the displayed quote will be tweet on Twitter.
 
-### WHAT USED FOR THIS APPLICATION
+### USED FOR THIS APPLICATION
 
 - HTML<br/>
 - CSS<br/>
